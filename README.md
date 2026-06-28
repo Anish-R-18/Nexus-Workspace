@@ -1,12 +1,12 @@
-# 🌐 Nexus Workspace
+# 🌐 SyncDraft
 
 > A real-time collaborative writing environment with branch-based drafting, powered by CRDTs.
 
-![Nexus Workspace](https://img.shields.io/badge/Status-Live-brightgreen) ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react) ![Django](https://img.shields.io/badge/Django-4.1-092E20?logo=django) ![WebSocket](https://img.shields.io/badge/WebSocket-Realtime-blue) ![Yjs](https://img.shields.io/badge/Yjs-CRDT-orange)
+![SyncDraft](https://img.shields.io/badge/Status-Live-brightgreen) ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react) ![Django](https://img.shields.io/badge/Django-4.1-092E20?logo=django) ![WebSocket](https://img.shields.io/badge/WebSocket-Realtime-blue) ![Yjs](https://img.shields.io/badge/Yjs-CRDT-orange)
 
 ## ✨ Overview
 
-Nexus Workspace is a real-time collaborative text editor that allows multiple users to write and edit documents simultaneously — like Google Docs, but with **Git-style branching**. Users can create isolated "drafts" (branches) from the main document, collaborate within them in real-time, and merge changes back when ready.
+SyncDraft is a real-time collaborative text editor that allows multiple users to write and edit documents simultaneously — like Google Docs, but with **Git-style branching**. Users can create isolated "drafts" (branches) from the main document, collaborate within them in real-time, and merge changes back when ready.
 
 ### 🔑 Key Features
 
@@ -67,7 +67,7 @@ Nexus Workspace is a real-time collaborative text editor that allows multiple us
 ## 📦 Project Structure
 
 ```
-Nexus/
+SyncDraft/
 ├── app/                          # Frontend (React + Vite)
 │   ├── src/
 │   │   ├── App.tsx               # Main app with routing, branch management
@@ -166,7 +166,7 @@ The backend runs on [Railway](https://railway.app) with:
 
 ### Collaborative Editing (CRDTs)
 
-Nexus uses [Yjs](https://yjs.dev), a CRDT (Conflict-free Replicated Data Type) library, to enable real-time collaboration without conflicts. Each user's edits are encoded as Yjs updates and broadcast via WebSocket to all connected users in the same room.
+SyncDraft uses [Yjs](https://yjs.dev), a CRDT (Conflict-free Replicated Data Type) library, to enable real-time collaboration without conflicts. Each user's edits are encoded as Yjs updates and broadcast via WebSocket to all connected users in the same room.
 
 ### Branch System
 

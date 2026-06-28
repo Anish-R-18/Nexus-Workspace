@@ -12,7 +12,7 @@ const wsUrl = import.meta.env.VITE_WS_URL || "ws://localhost:8000/ws/editor/";
 const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 const App = () => {
-  const [user, setUser] = useState<string>(() => localStorage.getItem("nexus-user") || "");
+  const [user, setUser] = useState<string>(() => localStorage.getItem("syncdraft-user") || "");
   const [formData, setFormData] = useState<string>("");
   const [joinByNameModalOpen, setJoinByNameModalOpen] = useState(false);
   const [joinByNameName, setJoinByNameName] = useState("");
@@ -217,12 +217,12 @@ const App = () => {
             e.preventDefault();
             const newUser = `${formData}-${Math.round(Math.random() * 1000)}`;
             setUser(newUser);
-            localStorage.setItem("nexus-user", newUser);
+            localStorage.setItem("syncdraft-user", newUser);
           }}
           className="flex flex-col gap-y-4 w-96 glass-panel p-8 rounded-2xl border border-cyan-500/20 shadow-[0_0_40px_rgba(6,182,212,0.15)] relative overflow-hidden"
         >
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-purple-500"></div>
-          <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 tracking-wide">Nexus Workspace</h2>
+          <h2 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 tracking-wide">SyncDraft</h2>
           <p className="text-gray-400 text-sm mb-4">Connect securely to start collaborating.</p>
           
           <label htmlFor="username" className="text-gray-300 text-xs font-bold uppercase tracking-wider">Display Name</label>
@@ -253,7 +253,7 @@ const App = () => {
       <div className="flex items-center justify-between mb-8">
         <div className="flex flex-col gap-2">
           <h1 className="text-3xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 flex items-center gap-2">
-            Nexus Workspace
+            SyncDraft
           </h1>
           <div className="flex flex-wrap items-center gap-3">
             <span className="text-gray-400 text-xs uppercase tracking-widest font-semibold">Active:</span>
