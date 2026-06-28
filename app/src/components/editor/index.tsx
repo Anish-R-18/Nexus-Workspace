@@ -250,38 +250,7 @@ const Editor: React.FC<Props> = (props) => {
         </Remirror>
       </div>
 
-      {isScrubbing && snapshots[scrubIndex] && (
-        <div className="absolute inset-0 flex flex-col bg-black/40 backdrop-blur-[2px] z-30 rounded-2xl border border-cyan-500/20">
-          <div className="p-2 text-center text-cyan-400 font-mono text-sm border-b border-cyan-500/20 bg-black/50">
-            TIME MACHINE PLAYBACK: {new Date(snapshots[scrubIndex].time).toLocaleTimeString()}
-          </div>
-          <PlaybackViewer json={snapshots[scrubIndex].json} />
-        </div>
-      )}
 
-      {snapshots.length > 1 && (
-        <div className="absolute bottom-24 left-1/2 -translate-x-1/2 glass-panel px-6 py-4 rounded-full w-3/4 max-w-2xl flex flex-col gap-2 z-50 shadow-[0_0_20px_rgba(6,182,212,0.3)] border border-cyan-500/30">
-          <div className="flex justify-between text-xs text-cyan-200 font-mono">
-            <span>Past</span>
-            <span>Live</span>
-          </div>
-          <input 
-            type="range" 
-            min="0" 
-            max={snapshots.length - 1} 
-            value={scrubIndex === -1 ? snapshots.length - 1 : scrubIndex}
-            onChange={(e) => {
-              const val = parseInt(e.target.value);
-              if (val === snapshots.length - 1) {
-                setScrubIndex(-1);
-              } else {
-                setScrubIndex(val);
-              }
-            }}
-            className="w-full accent-cyan-400 cursor-pointer"
-          />
-        </div>
-      )}
 
       <AvatarDock provider={provider} currentUser={username} />
     </div>
