@@ -185,7 +185,3 @@ Branch passwords are hashed with SHA-256 before storage. When a user attempts to
 **Anish R** — [GitHub](https://github.com/Anish-R-18)
 
 ---
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
